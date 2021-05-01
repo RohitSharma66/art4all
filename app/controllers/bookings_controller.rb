@@ -32,6 +32,7 @@ class BookingsController < ApplicationController
 		@booking.art = @art
 		if @booking.update(booking_params)
 			redirect_to art_booking_path(@art, @booking)
+		end
 	end
 
 	def destroy
