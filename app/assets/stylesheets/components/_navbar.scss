@@ -1,6 +1,20 @@
+// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  height: 85px;
+  font-family: calibri;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 12px rgba(0,0,0,.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +24,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-item {
+  padding: 5px;
+}
+
+.logo {
+	height: 60px;
+}
+
+#home-button {
+  background-color: black;
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  background-color: #292929;
+  color: #FFFFFF !important;
+  transition: all ease 1s;
+}
+

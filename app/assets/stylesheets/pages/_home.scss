@@ -1,1 +1,107 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body {
+	background-color: #fff;
+	margin: 0px;
+    padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.carousel-photo-1 {
+	background-image: asset_url("c1.jpeg");
+}
+
+.carousel-photo-2 {
+	background-image: asset_url("c2.jpeg");
+}
+
+.carousel-photo-3 {
+	background-image: asset_url("c3.jpeg");	
+}
+
+.carousel-photo-4 {
+	background-image: asset_url("c4.jpeg");	
+}
+
+.carousel-photo-5 {
+	background-image: asset_url("c5.jpeg");	
+}
+
+.carousel-photo-6 {
+	background-image: asset_url("c6.jpeg");	
+}
+
+.carousel-item {
+  // position: absolute;
+  background-size: cover;
+  background-position: center;
+  height: 670px;
+}
+
+.carousel {
+  height: 670px;
+  // position: relative;
+}
+
+// ------------------------------------------------------------------
+// /////////////////////ABOUT SECTION////////////////////////////////////
+
+.about-title {
+	background-color: #ade8f4;
+	padding: 20px;
+}
+
+#about-section {
+	// padding: 70px;
+	margin-top: 50px;
+}
+
+.about-description {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.mona-image {
+	width: 310px;
+	height: 390px;
+}
+
+.mona-image-description {
+	// width: 45vw;
+	color: rgba(0, 0, 0, 0.5);
+	// padding: 10px;
+}
+
+.image-description {
+	line-height: 1.8;
+}
+
+.quotes {
+  font-family: 'Lobster', cursive;
+  letter-spacing: 0.2em;
+  padding: 5px;
+  width: 1104px;
+}
+
+.blockquote-paragraph {
+	color: #5bc0be;
+}
+
+// /////////////////////Latest arts section///////////////////////////////////////////////
+
+.rating-card {
+	width: 160px;
+	height: 300px;
+}
+
+.carousel-2 {
+	height: 200px;
+	// background-color: blue;
+}
+
+.slider {
+	background-color: #ade8f4;
+}
