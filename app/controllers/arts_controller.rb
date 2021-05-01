@@ -33,6 +33,7 @@ class ArtsController < ApplicationController
 		@art = Art.update(art_params)
 		if @art.save
 			redirect_to art_path(@art)
+		end
 	end
 
 
@@ -59,5 +60,4 @@ class ArtsController < ApplicationController
 			:shipping
 			)
 	end
-
 end
