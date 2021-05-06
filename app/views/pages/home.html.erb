@@ -1,4 +1,5 @@
-<hr>
+<!-- <hr> -->
+<%= render 'shared/navbar' %>
 <div id="carouselExampleIndicators" class="carousel slide" id="main" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -33,10 +34,10 @@
 </div>
 
 <!-- -----------------------ABOUT-SECTION------------------------------------------------ -->
-	<div class="container mt-5">
+	<div class="container mt-3">
 		<!-- ------------------------------------------------------------------- -->
 		<div id="about-section">
-			<div class="d-flex justify-content-around p-5">			
+			<div class="d-flex justify-content-around mt-5">			
 				<div class="mr-4">
 				  <h2 class="about-title text-white">About ArtGallery</h2>
 			    </div>
@@ -45,10 +46,10 @@
 				</div>		
 			</div>
 	
-			<div class="d-flex justify-content-around mt-3">	
+			<div class="d-flex justify-content-around mt-4">	
 				<div class="col-8 mona-image-description">
 					<h4 class="font-weight-bold">Make Art Accessible to the Masses</h4>
-					<p class="image-description mt-2">
+					<p class="image-description">
 						Since it's inception back in 2007, Virgo ArtGallery has endeavoured to help foster and build a lively online arts scene, taking on over 4000 artists, enabling them to sell their artworks across the world. Not only this, we've worked tirelessly to build our range of affordable artworks, to enable more people to enjoy the wonders of art. The Gallery presents curated virtual exhibitions on themes relevant and exciting in the context of contemporary creative culture. Our educational programmes aim to reveal the possibilities of artistic expression to young minds, encourage fresh thought and stimulate innovation.
 					</p>		
 				</div>
@@ -59,7 +60,7 @@
 		 </div>
 
 
-		<div class="bg-light mt-3 quotes">
+		<div class="bg-light mt-3 quotes shadow">
 	        <blockquote class="blockquote text-right">
 	        <p class="blockquote-paragraph mb-0 mr-3">"Art is not what you see,but what you make others see."</p>
 	        <footer class="blockquote-footer mr-3"><cite title="Source Title">EDGAR DEGAS</cite></footer>
@@ -68,33 +69,33 @@
 	</div>
 <!-- ---------------------------------Latest-arts-section-------------------------------- -->
 
-	<hr>
 
-<div id="carouselExampleControls" class="carousel carousel-2 slide mt-5" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel carousel-2 slide bg-light mt-5" data-ride="carousel">
 	 <div class="carousel-inner container">
+	<!-- <hr> -->
 	    <div class="col-12 carousel-item active">
 	    	<div class="row d-flex justify-content-center align-items-center mt-3">	
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 5 %>	
 			    	<h6>"ArtWork"</h6>
 			    	<small>Absolutely love this, first time purchasing art work and really good.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Great service from ArtGallery. Wide selection of arts. </small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"ArtWork"</h6>	
 			    	<small>Clear and attractive website, great products.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"ArtWork"</h6>	
 			    	<small>Love my artwork from the Glittering Fox.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Quick responses to emails and fast delivery!</small>
@@ -103,27 +104,27 @@
 	    </div>
 	    <div class="col-12 carousel-item">
 	    	<div class="row d-flex justify-content-center align-items-center mt-3">	
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 5 %>	
 			    	<h6>"ArtWork"</h6>
 			    	<small>We are absolutely thrilled - the artworks are exactly as we expected, very quick delivery and very well packaged.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>ArtGallery provides a fantastic way to view and own original art at a range of different prices.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>I finally found the courage to buy a beautiful painting and I was helped to make use of the affordable art scheme.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Excellent website easy to navigate with thousands of pieces of artwork to choose from,to suit all budgets.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Yes I would highly recommend art gallery. Original  artworks that you can purchase from from established artists!</small>
@@ -132,34 +133,34 @@
 	    </div>
 	    <div class="col-12 carousel-item">
 	    	<div class="row d-flex justify-content-center align-items-center mt-3">	
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 5 %>	
 			    	<h6>"ArtWork"</h6>
 			    	<small>Fantastic range of artwork at prices to suit all budgets. I bought a painting using an interest free credit facility.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>After looking at various sites, yours was straightforward and fairly easy to use. I had responses to queries in good time.</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Thank you very much! I am pleased with Gold membership...</small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Great variety of affordable art.Item dispatched very quickly </small>
 		    	</div>
-		    	<div class="rating-card m-3">
+		    	<div class="rating-card">
 			    	<%= link_to '⭐️' * 4 %>	
 			    	<h6>"Service"</h6>	
 			    	<small>Absolutely love this, first time purchasing art work and really good.</small>
 		    	</div>
 	    	</div>
 	    </div>
-	 </div>
+	</div>
 	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 	    <span class="carousel-control-prev-icon slider" aria-hidden="true"></span>
 	    <span class="sr-only">Previous</span>
@@ -170,18 +171,101 @@
 	  </a>
 </div>
 
+<!-- --------------------------------Some favourite arts------------------------------------- -->
+<div class="m-4">
+	<h2 class="text-center " style="color: #5bc0be">Some of our Favourite Arts</h2>	
+</div>
+	<div class="container p-4">
+		<div class="row">
+			<div class="col card-boxes">
+				<div class="card shadow" style="width: 20rem;">
+					<%= image_tag 'p1.jpeg', class:"card-image rounded" %>
+				  <div class="card-body ml-2">
+				 	<h4>Helen Garden</h4>
+				    <h6>Author : <i>Estera Reut</i></h6>
+				    <p class="card-text">£ 250</p>
+				  </div>
+				</div>
+			</div>
+			<div class="col">	
+				<div class="card shadow card-boxes" style="width: 20rem;">
+				  	<%= image_tag 'p2.jpeg', class:"card-image rounded" %>
+				  <div class="card-body ml-2">
+				   	<h4>Man faces</h4>
+				    <h6>Author : <i>Dimitar Belchev</i></h6>
+				    <p class="card-text">£ 4000</p>
+				  </div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card shadow card-boxes" style="width: 20rem;">
+				  	<%= image_tag 'p3.jpeg', class:"card-image rounded" %>
+				  <div class="card-body ml-2">
+				  	<h4>Helen Garden</h4>
+				    <h6>Author : <i>Geordanna Cordero</i></h6>
+				    <p class="card-text">£ 680</p>
+				  </div>
+				</div>	
+			</div>
+			<div class="col">
+				<div class="card shadow card-boxes" style="width: 20rem;">
+				  	<%= image_tag 'p4.jpeg', class:"card-image rounded" %>
+				  <div class="card-body ml-2">
+				   	<h4>Helen Garden</h4>
+				    <h6>Author : <i>Jean Carlo Emer</i></h6>
+				    <p class="card-text">£ 920</p>
+				  </div>
+				</div>	
+			</div>
+			<div class="col">
+				<div class="card shadow card-boxes" style="width: 20rem;">
+				  <%= image_tag 'p5.jpeg', class:"card-image rounded" %>
+				  <div class="card-body ml-2">
+				  	<h4>Helen Garden</h4>
+				    <h6>Author : <i>Jon Tyson</i></h6>
+				    <p class="card-text">£ 750</p>
+				  </div>
+				</div>	
+			</div>
+			<div class="col">
+				<div class="card shadow card-boxes" style="width: 20rem;">
+				  <%= image_tag 'p6.jpeg', class:"card-image rounded" %>
+				  <div class="card-body ml-2">
+				    <h4>Persian Princess</h4>
+				    <h6>Author : <i>McGill Brary</i></h6>
+				    <p class="card-text">£ 3000</p>
+				  </div>
+				</div>	
+			</div>
+		</div>
+  	</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  	<!-- ////////////////////////////////Cards section---------------------------- -->
+<hr>
+<div class="cards-main">
+	<div class="container">
+		<div class="card-div">
+			<div class="cards">
+				<%= image_tag 'safebuy.jpeg', class:"card-1" %>
+			</div>
+			<div class="cards">
+				<%= image_tag 'americanexpress.png', class:"card-1" %>
+			</div>
+			<div class="cards">
+				<%= image_tag 'mastercard.png', class:"card-1" %>
+			</div>
+			<div class="cards">
+				<%= image_tag 'visa.png', class:"card-1" %>
+			</div>
+			<div class="cards">
+				<%= image_tag 'paypal.png', class:"card-1" %>
+			</div>
+			<div class="cards">
+				<%= image_tag 'ownart.jpeg', class:"card-1" %>
+			</div>
+			<div class="cards">
+				<%= image_tag 'artscouncil.jpeg', class:"card-1" %>
+			</div>
+		</div>	
+	</div>
+</div>

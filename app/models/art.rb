@@ -1,7 +1,7 @@
 class Art < ApplicationRecord
-  has_many_attached :photos
   belongs_to :user
   has_many :bookings
-
-  validates :artist, :name, :photos, :price, :type, :year, presence: true
+  has_one_attached :photo
+# type, :medium, :style, :year, :size, :ready_to_hang, :frame, :materials, :shipping,
+  validates :name, :artist, :Price, presence: true
 end

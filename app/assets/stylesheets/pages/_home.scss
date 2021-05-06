@@ -36,7 +36,6 @@ html {
 }
 
 .carousel-item {
-  // position: absolute;
   background-size: cover;
   background-position: center;
   height: 670px;
@@ -44,7 +43,6 @@ html {
 
 .carousel {
   height: 670px;
-  // position: relative;
 }
 
 // ------------------------------------------------------------------
@@ -70,9 +68,7 @@ html {
 }
 
 .mona-image-description {
-	// width: 45vw;
 	color: rgba(0, 0, 0, 0.5);
-	// padding: 10px;
 }
 
 .image-description {
@@ -90,18 +86,71 @@ html {
 	color: #5bc0be;
 }
 
-// /////////////////////Latest arts section///////////////////////////////////////////////
+// /////////////////////Review- section///////////////////////////////////////////////
 
 .rating-card {
-	width: 160px;
-	height: 300px;
+	width: 200px;
+	height: 250px;
+	word-wrap: break-word;
 }
 
 .carousel-2 {
 	height: 200px;
-	// background-color: blue;
 }
 
 .slider {
-	background-color: #ade8f4;
+	background-color: black;
+	// color: black;
 }
+
+// ////////////////////////////Some Favourite arts///////////////////////////////////
+
+.card {
+	height: 420px;
+	margin-bottom: 25px;
+	border-radius: 10px;
+}
+
+
+.card-image {
+	height: 300px;
+}
+
+.card-text {
+	color: #5bc0be;
+}
+
+.card-boxes:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.5s;
+}
+
+
+// //////////////////////////////cards-div//////////////////////////////////////////
+
+.cards-main{
+	height: 80px;
+	margin-top: 20px;
+} 
+
+
+.card-1 {
+	height: 50px;
+	width: 70px;
+	margin-right: 40px;
+}
+
+.card-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+.cards {
+	margin: 10px;
+}
+
+
+
+
+

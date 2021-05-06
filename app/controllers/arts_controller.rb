@@ -47,7 +47,7 @@ class ArtsController < ApplicationController
 		params.require(:art).permit(
 			:name, 
 			:artist,
-			:photos, 
+			:photo, 
 			:price, 
 			:type, 
 			:medium, 
