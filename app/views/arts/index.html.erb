@@ -1,1 +1,12 @@
-<%= Art.all %>
+<div class="container">
+	<div class="row">
+		<%= @arts.each do |art| %>
+			<div class="col-12 col-md-4">
+				<%= art.photo %>
+				<%= art.name %>
+				<%= art.artist %>
+				<%= art.Price %>	
+			</div>
+		<% end %>
+	</div>
+</div>

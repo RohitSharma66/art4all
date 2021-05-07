@@ -3,5 +3,5 @@ class Art < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 # type, :medium, :style, :year, :size, :ready_to_hang, :frame, :materials, :shipping,
-  validates :name, :artist, :Price, presence: true
+  validates :name, :artist, :Price, :photo, presence: true
 end
