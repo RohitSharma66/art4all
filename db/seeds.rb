@@ -6,39 +6,39 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Cleaning up database"
-Art.destroy_all if Rails.env.development?
-User.destroy_all
-puts "Database is clean"
+# puts "Cleaning up database"
+# Art.destroy_all if Rails.env.development?
+# User.destroy_all
+# puts "Database is clean"
 
-puts "Arts is creating"
+# puts "Arts is creating"
 
-1.times do |i|
+# 1.times do |i|
 
-  user = User.create(
-    email: Faker::Internet.email,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    password: 'test123456'
-  )
+#   user = User.create(
+#     email: Faker::Internet.email,
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     password: 'test123456'
+#   )
 
-  puts "Created User: #{user.first_name} (id: #{user.id})"
+#   puts "Created User: #{user.first_name} (id: #{user.id})"
 
-art1 = Art.create!(
-	medium: "dw",
-	style: "dw",
-	size: "fvv",
-	year: "1234",
-	ready_to_hang: "dwqd",
-	frame: "dw",
-	materials: "dw",
-	shipping: "dqw",
-	artist: "Helen Hobbs",
-	name: "Helene Garden",
-	# photo: "dwq",
-	Price: "£290"
-	)
-end
+# art1 = Art.create!(
+# 	medium: "dw",
+# 	style: "dw",
+# 	size: "fvv",
+# 	year: "1234",
+# 	ready_to_hang: "dwqd",
+# 	frame: "dw",
+# 	materials: "dw",
+# 	shipping: "dqw",
+# 	artist: "Helen Hobbs",
+# 	name: "Helene Garden",
+# 	# photo: "dwq",
+# 	Price: "£290"
+# 	)
+# end
 
-puts "Arts is created"
-puts "Finished."
+# puts "Arts is created"
+# puts "Finished."

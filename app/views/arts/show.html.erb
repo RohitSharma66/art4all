@@ -1,0 +1,27 @@
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom d-flex justify-content-center">
+    <div class="text-secondary">
+        <%= image_tag 'Virgo.png', class: "logo" %>
+    </div>
+</div>
+
+<div class="container full-page">
+  <h3 class="text-center p-4">View Desk</h3>
+	<div class="row mb-4 mt-5">
+		<!-- < % @arts.each do |art| %> -->
+			<%= link_to art_path(@art) do %>
+				<div class="col-12 col-md-4">
+					<% if @art.photo.attached? %>
+					<%= cl_image_tag @art.photo.key, height: 300, width: 250, crop: :fill %>
+					<% end %>		
+				<% end %>
+				</div>
+					<div class="card-content">		
+					<%= @art.name %>
+					<%= @art.artist %>
+					<%= @art.price %>	
+					</div>
+			<!-- < % end %> -->
+	</div>
+	<%= link_to "Back", arts_path, class: "btn btn-info" %>
+	<%= link_to 'Delete', art_path(@art), method: :delete, class:"btn btn-danger" %>
+</div>
