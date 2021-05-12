@@ -1,7 +1,14 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom d-flex justify-content-center">
-    <div class="text-secondary">
-        <%= image_tag 'Virgo.png', class: "logo" %>
-    </div>
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom d-flex justify-content-between">
+    <!-- <div class="text-secondary"> -->
+		<div>
+			<%= link_to root_path do  %>
+		        <%= image_tag 'Virgo.png', class: "logo" %>		
+			<% end %>	
+		</div>
+        <div>
+			<%= link_to "Back", arts_path, class: "btn btn-info mr-3" %>				
+		</div>
+    <!-- </div> -->
 </div>
 
 <div class="container full-page">
@@ -22,6 +29,5 @@
 					</div>
 			<!-- < % end %> -->
 	</div>
-	<%= link_to "Back", arts_path, class: "btn btn-info" %>
 	<%= link_to 'Delete', art_path(@art), method: :delete, class:"btn btn-danger" %>
 </div>

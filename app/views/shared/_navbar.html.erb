@@ -1,26 +1,29 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom ">
-    <div>
-      <ul class="navbar-nav mr-auto ml-3">
-        <% if user_signed_in? %>
-        <li class="nav-item">
-          <a href="#main" class="nav-link active" id="home-button">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#about-section" class= "nav-link">About</a>
-        </li>
-        <li class="nav-item">
-          <!-- <a href="#" class= "nav-link">Explore</a> -->
-          <%= link_to 'Explore', arts_path, class:'nav-link' %>
-        </li>
+    <div class="text-secondary ml-2">
+        <%= link_to root_path do  %>
+          <%= image_tag 'Virgo.png', class: "logo" %>
         <% end %>
-        </ul>
     </div>
 
-    <div class="text-secondary ml-5">
-        <%= link_to root_path do  %>
-        <%= image_tag 'Virgo.png', class: "logo" %>
+    <div>
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <a href="#main" class="nav-link active mr-2" id="home-button">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about-section" class= "nav-link mr-2">About</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Explore', arts_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+           <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
+        </li>
         <% end %>
+      </ul>
     </div>
+
 
 
     <div class="collapse navbar-collapse mr-3" id="navbarSupportedContent">
@@ -30,7 +33,7 @@
       <% else %>
         <input name="query" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Search by artist or title...">
       <% end %>
-        <button class="btn btn-outline-secondary my-2 my-sm-0 submit-btn" type="submit">Search</button>
+        <button class="btn btn-outline-secondary my-2 my-sm-0 submitt-btn" type="submit">Search</button>
       </form>
       <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>       
@@ -38,10 +41,9 @@
             <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu dropdown-menu-right">
               <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <%= link_to "Upload Art", new_art_path, class: "dropdown-item" %>
             </div>
           </li>
-          <% else %>
+      <% else %>
           <li class="nav-item">
             <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
             <div class="dropdown-menu dropdown-menu-right">

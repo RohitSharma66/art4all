@@ -1,33 +1,38 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom d-flex justify-content-between">
 	<div>
-		<%= link_to "Back", root_path, class: "btn btn-info ml-3" %>				
-	</div>
-	<div>
 		<%= link_to root_path do  %>
 	        <%= image_tag 'Virgo.png', class: "logo" %>		
 		<% end %>	
 	</div>
-	<div>
-		<%= link_to "SignOut", destroy_user_session_path, method: :delete, class: " btn btn-secondary" %>
+	<div class="d-flex">
+		<%= link_to "Upload Art", new_art_path, class: "nav-link btn btn-success mr-2" %>
+		<%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
 	</div>
 </div>
 
-<div class="container full-page p-5">
-  <h3 class="text-center mt-5">View All of Our Desks</h3>
-	<div class="row mt-5">
-		<% @arts.each do |art| %>
-			<%= link_to art_path(art) do %>
-				<div class="col-12 col-md-4">
-					<% if art.photo.attached? %>
-					<%= cl_image_tag art.photo.key, height: 300, width: 250, crop: :fill %>
-					<% end %>		
-					<div class="card-content">		
-					<%= art.name %>
-					<%= art.artist %>
-					<%= art.price %>	
-					</div>
-				</div>
+
+
+<div class="container full-page mt-5">
+	<h3 class="text-center mt-5">View All of Our Desks</h3>
+	  <div class="row mt-5 p-2">
+	  	<% @arts.each do |art| %>
+		<%= link_to art_path(art) do %>
+		<div class="col">	
+		 <div class="card ml-1" style="width: 21rem;">
+			<% if art.photo.attached? %>
+				<%= cl_image_tag art.photo.key, height: 300, width: 334, crop: :fill, class:"card-image" %>
 			<% end %>
-		<% end %>
-	</div>
+		   	 <div class="card-body">
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			    <%= art.name %>
+				<%= art.artist %>
+				<%= art.price %>
+		   	 </div>
+	 	  </div>
+		</div>
+	   <% end %>
+    <% end %>
+  </div>
 </div>
+
+
