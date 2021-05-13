@@ -1,26 +1,29 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom d-flex justify-content-center">
-    <div class="text-secondary ml-3">
-        <%= image_tag 'Virgo.png', class: "logo" %>
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom d-flex justify-content-between">
+    <div>
+        <%= image_tag 'logo.png', class: "logo ml-1" %>
+    </div>
+    <div>
+      <%= link_to "Log in", new_session_path(resource_name), class: "btn rounded text-white mr-4", style:"background-color:#5bc0be";%>   
     </div>
 </div>
 
-<div class="container">
-  <div class="d-flex justify-content-center full-page mt-5">
-    <div class="col-6 mt-5">    
-    <h2>Sign up</h2>
+<div class="container" style="margin-top: 112px">
+  <div class="d-flex justify-content-center full-page pt-2 rounded">
+    <div class="col-sm-6 p-4 mt-3" style="background-color: #f3f3f4">    
+    <h2 class="text-center">Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
       <div class="row">
-            <div class="col">
+            <div class="col mt-3">
                <%= f.input :first_name,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "first name", class: "border-radius-form" }%>
             </div>
-            <div class="col">
+            <div class="col mt-3">
               <%= f.input :last_name,
                           required: true,
                           autofocus: true,
@@ -40,13 +43,12 @@
                       input_html: { autocomplete: "new-password" } %>
         </div>
 
-        <div class="form-actions mb-2">
-          <%= f.button :submit, "Sign up", class: "btn submit-btn" %>
+        <div class="form-actions mt-4">
+          <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
           <%= link_to 'Cancel', root_path, class: "btn btn-info" %>
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

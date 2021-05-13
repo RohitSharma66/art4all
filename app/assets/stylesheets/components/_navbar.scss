@@ -25,22 +25,23 @@
 }
 
 .nav-item {
-  padding: 5px;
+  padding: 3px;
 }
 
 .logo {
-	height: 60px;
+	height: 90px;
+  width: 110px;
 }
 
 #home-button {
-  background-color: black;
+  background-color: #353535;
   border-radius: 6px;
   color: #fff !important;
 }
 
 .nav-link:hover {
    border-radius: 6px;
-  background-color: #292929;
+  background-color: #353535;
   color: #FFFFFF !important;
   transition: all ease 1s;
 }
