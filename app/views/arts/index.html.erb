@@ -18,11 +18,11 @@
 			<div class="col-sm-4 card-boxes mt-4">	
 				<%= link_to art_path(art), class:"text-decoration-none" do %>
 					<div class="card" style="width: 21rem;">
-						<% if art.photo.attached? %>
-						<%= cl_image_tag art.photo.key, height: 300, width: 334, crop: :fill, class:"card-image" %>
+					<% if art.photo.attached? %>
+					<%= cl_image_tag art.photo.key, height: 330, width: 334, crop: :fill, class: "card-image"%>
 						<% end %>
 					   	 <div class="card-body">
-						    <h5><i class="text-dark"><%= art.name %></i></h5>	
+						    <h5><i class="text-dark">"<%= art.name %>"</i></h5>	
 							<h6 class="text-dark">Author : <%= art.artist %></h6> 
 							<p class="card-text">£<%= art.price %></p> 
 					   	</div>
