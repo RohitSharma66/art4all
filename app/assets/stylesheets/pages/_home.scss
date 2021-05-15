@@ -110,25 +110,16 @@ html {
 // ////////////////////////////Some Favourite arts///////////////////////////////////
 
 .card {
-	height: 450px;
-	margin-bottom: 25px;
-	border-radius: 10px;
-}
-
-
-.card-image {
-	// height: 350px;
-	border-radius: 10px 10px 0 0;
+	height: 450;
 	width: 100%;
-	height: auto;
-	// object-fit: center;
-    // object-cover: fill;
-    // object-position: 50% 50%;
+	margin-bottom: 25px;
+	// border-radius: 10px;
 }
 
-.card-body {
-	overflow: scroll;
-}
+
+
+
+
 
 .card-text {
 	color: #5bc0be;
@@ -141,7 +132,7 @@ html {
 }
 
 
-// //////////////////////////////cards-div//////////////////////////////////////////
+// //////////////////////////////credit-cards-div//////////////////////////////////////////
 
 .cards-main{
 	height: 50px;

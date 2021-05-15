@@ -19,7 +19,7 @@
 				<%= link_to art_path(art), class:"text-decoration-none" do %>
 					<div class="card" style="width: 21rem;">
 					<% if art.photo.attached? %>
-					<%= cl_image_tag art.photo.key, class:"card-image"%>
+					<%= cl_image_tag art.photo.key, class: "card-imagee" %>
 						<% end %>
 					   	 <div class="card-body">
 						    <h5><i class="text-dark">"<%= art.name %>"</i></h5>	
