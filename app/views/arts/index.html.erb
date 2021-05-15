@@ -17,9 +17,9 @@
 		<% @arts.each do |art| %>
 			<div class="col-sm-4 card-boxes mt-4">	
 				<%= link_to art_path(art), class:"text-decoration-none" do %>
-					<div class="card" style="width: 22rem;">
+					<div class="card" style="width: 21rem;">
 					<% if art.photo.attached? %>
-					<%= cl_image_tag art.photo.key, height: 330, width: 350, crop: :fill, class: "card-image"%>
+					<%= cl_image_tag art.photo.key, class:"card-image"%>
 						<% end %>
 					   	 <div class="card-body">
 						    <h5><i class="text-dark">"<%= art.name %>"</i></h5>	
