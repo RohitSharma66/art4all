@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_09_134551) do
+ActiveRecord::Schema.define(version: 2021_05_15_222116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_05_09_134551) do
     t.string "name"
     t.string "artist"
     t.string "price"
+    t.string "style"
     t.index ["user_id"], name: "index_arts_on_user_id"
   end
 

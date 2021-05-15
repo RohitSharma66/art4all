@@ -13,7 +13,10 @@
 
   <body>    
     <%= render 'shared/flashes' %>
+    <div class="main" style="margin-top: 100px;">
     <%= yield %>
+      
+    </div>
     <p class="notice"><%= notice %></p>
     <%= render 'shared/footer' %>
   </body>
