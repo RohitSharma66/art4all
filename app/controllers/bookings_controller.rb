@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
 	end
 
 	def show
+		@booking = Booking.find(params[:id])
+		@art = Art.find(params[:art_id])
 		@total_price = @art.price * (@booking.end_date.mjd - @booking.start_date.mjd)
 	end
 
@@ -18,7 +20,7 @@ class BookingsController < ApplicationController
 		if @booking.save
 			redirect_to art_booking_path(@art, @booking)
 		else
-			render 'arts/show'
+			render 'new'
 		end
 	end
 
@@ -29,9 +31,12 @@ class BookingsController < ApplicationController
 
 	def update
 		@booking = Booking.find(params[:id])
+		@art = Art.find(params[:art_id])
 		@booking.art = @art
 		if @booking.update(booking_params)
 			redirect_to art_booking_path(@art, @booking)
+		else
+			render 'edit'
 		end
 	end
 

@@ -9,39 +9,45 @@
 		</div>
 </div>
 
-<div class="container full-page p-4">
-  <!-- <h3 class="text-center p-3">View Desk</h3> -->
-	<div class="row mb-4 d-flex mt-2 p-4">
-		<!-- < % @arts.each do |art| %> -->
-		<!-- < %= link_to art_path(@art) do %> -->
-		<div class="mr-3 imaage">
+<div class="container full-page">
+	<div class="row mb-3">
+		<div class="mr-3 imaage mt-5">
 			<% if @art.photo.attached? %>
-			<%= cl_image_tag @art.photo.key, width:450, height:500, crop: :fill %>
+			<%= cl_image_tag @art.photo.key, width:450, height:650, crop: :fill, style:"padding:5px; border-radius:20px;" %>
 			<% end %>		
-		<!-- < % end %> -->
 		</div>
-		<div class="container col p-2 ">	
-			<div class="card-content">
-				<ul class="un-list">
-					<li class="mb-3"><h1><strong><i style="color: #e9afa3;">"<%= @art.name %>"</i></strong></h1></li>
-					<div class="p-3">
-						<li class="mb-3"><i class="fas fa-user mr-4"></i><%= @art.artist.capitalize %></li>
-						<li class="mb-3"><i class="fas fa-pound-sign mr-4"></i><%= @art.price %>.00</li>
-						<li class="mb-3"><i class="fas fa-truck-pickup mr-4"></i>39.4 W x 59.1 H x 0.8 in</li>
-						<li class="mb-3"><%= @art.style %></li>
-						<li class="mb-3">Ready to hang | Yes</li>
-						<li class="mb-3">Type | Original</li>
-						<li class="mb-3">Frame | No</li>
-						<li class="mb-3">Signed | Yes, On the back</li>	
-						<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>	
-					</div>
-				</ul>					
+		<div class="col">	
+			<p class="p-3"><h1><strong><i style="color: #e9afa3;">"<%= @art.name %>"</i></strong></h1></p>	
+			<div class="card-content d-flex mt-4">
+				<div class="un-list" style="color: rgba(0, 0, 0, 0.5);">
+					<li class="mb-3"><i class="fas fa-user mr-4 text-dark"></i><%= @art.artist.capitalize %></li>
+					<li class="mb-3"><i class="fas fa-pound-sign mr-4 text-dark"></i><%= @art.price %>.00</li>
+					<li class="mb-3"><i class="fas fa-truck-pickup mr-4 text-dark"></i>39.4 W x 59.1 H x 0.8 in</li>
+					<li class="mb-3"><%= @art.style %></li>
+					<li class="mb-3">Ready to hang | Yes</li>
+					<li class="mb-3">Type | Original</li>
+					<li class="mb-3">Frame | No</li>
+					<li class="mb-3">Signed | Yes, On the back</li>	
+					<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>	
+				</div>
+				<div class="">
+			      <div class="shadow ml-3" style="width: 350px;">
+			      <%= render 'bookings/booking_form' %>
+			      </div>
+			    </div>
 			</div>		
+			<p style="line-height: 1.8; color: rgba(0, 0, 0, 0.5);">Description : Fine Arts degree alongside art masters Frank O’Cain and Ronnie Landfield at the Art Students League of New York. Iconic artists such as Georgia O'Keeffe, Jackson Pollock, Mark Rothko, among others, taught or studied here too. Growing up in New York City taught Susana a deep appreciation and love for different cultures. The eccentricity, pace and vibrancy of the concrete jungle shines through in glorious and galvanised works such as <i>The Night Is Ours, a dancing duet of acrylic and speckled, gestural and gyrating marks</i>. Continuous line motifs and organised chaos feature widely in Susana’s paintings; the artist is interested in the concept of synchronicity, destiny, and our willingness or unwillingness to keep going, “even when we don’t see where the road is taking us”.
+			</p>
 		</div>
 	</div>
-	<p style="line-height: 1.8;">Description : Fine Arts degree alongside art masters Frank O’Cain and Ronnie Landfield at the Art Students League of New York. Iconic artists such as Georgia O'Keeffe, Jackson Pollock, Mark Rothko, among others, taught or studied here too. Growing up in New York City taught Susana a deep appreciation and love for different cultures. The eccentricity, pace and vibrancy of the concrete jungle shines through in glorious and galvanised works such as <i>The Night Is Ours, a dancing duet of acrylic and speckled, gestural and gyrating marks</i>. Continuous line motifs and organised chaos feature widely in Susana’s paintings; the artist is interested in the concept of synchronicity, destiny, and our willingness or unwillingness to keep going, “even when we don’t see where the road is taking us”.
-	</p>
-	<%= link_to 'Delete', art_path(@art), method: :delete, class:"btn btn-danger" %>
+	<!-- < %= link_to 'Delete', art_path(@art), method: :delete, class:"btn btn-danger mt-2" %> -->
+<hr>
+	<div class="bg-light mt-3 quotes shadow">
+        <blockquote class="blockquote text-right">
+        <p class="blockquote-paragraph mb-0 mr-3">"Inspiration exists, but it has to find you working."</p>
+        <footer class="blockquote-footer mr-3"><cite title="Source Title">Pablo Picasso</cite></footer>
+        </blockquote>
+    </div>
 </div>
 
 
