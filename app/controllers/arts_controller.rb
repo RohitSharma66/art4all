@@ -53,8 +53,8 @@ class ArtsController < ApplicationController
 			:name, 
 			:artist,
 			:photo, 
-			:price,
-			:rate 
+			:price
+			 
 			)
 	end
 end

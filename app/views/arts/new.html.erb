@@ -33,7 +33,7 @@
 					<%= f.input :name, placeholder: "Name", label: false %>
 					<%= f.input :artist, placeholder: "Artist", label: false %>
 					<%= f.input :price, placeholder: "Price", label: false %>
-					<%= f.input :rate, placeholder: "Daily rate", label: false, prepend: '£' %>
+					<!-- < %= f.input :rate, placeholder: "Daily rate", label: false, prepend: '£' %> -->
 					<%= f.input :style, collection: Art::STYLES %>
 					<%= f.input :photo, as: :file, label: false %>
 					<%= f.submit "Upload", class:"btn btn-outline-success"%>
