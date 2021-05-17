@@ -7,10 +7,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
 
 
 // ----------------------------------------------------
@@ -30,4 +33,5 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  AOS.init();
 });

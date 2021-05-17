@@ -1,37 +1,42 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom  d-flex justify-content-between">
 		<div>
 			<%= link_to root_path do  %>
-		        <%= image_tag 'logo.png', class: "logo ml-1" %>		
+		        <%= image_tag 'logo.png', class: "logo ml-2" %>		
 			<% end %>	
 		</div>
         <div>
-			<%= link_to "Back", arts_path, class: "btn mr-3 nav-button text-white"%>				
+       	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
 		</div>
 </div>
 
 <div class="container full-page">
 	<div class="row mb-3">
-		<div class="mr-3 imaage mt-5">
+		<div class="mr-3 mt-5">
 			<% if @art.photo.attached? %>
-			<%= cl_image_tag @art.photo.key, width:450, height:650, crop: :fill, style:"padding:5px; border-radius:20px;" %>
-			<% end %>		
+				<%= cl_image_tag @art.photo.key, width:470, height:650, crop: :fill, style:"border-radius:20px;" %>
+			<% end %>
+			<div class="col p-5 ml-5">
+				<%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>	
+				<%= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				
+			</div>		
 		</div>
 		<div class="col">	
 			<p class="p-3"><h1><strong><i style="color: #e9afa3;">"<%= @art.name %>"</i></strong></h1></p>	
 			<div class="card-content d-flex mt-4">
-				<div class="un-list" style="color: rgba(0, 0, 0, 0.5);">
-					<li class="mb-3"><i class="fas fa-user mr-4 text-dark"></i><%= @art.artist.capitalize %></li>
-					<li class="mb-3"><i class="fas fa-pound-sign mr-4 text-dark"></i><%= @art.price %>.00</li>
-					<li class="mb-3"><i class="fas fa-truck-pickup mr-4 text-dark"></i>39.4 W x 59.1 H x 0.8 in</li>
+				<div class="un-list p-3" style="color: rgba(0, 0, 0, 0.5);">
+					<li class="mb-3"><i class="fas fa-user mr-3 text-dark"></i><%= @art.artist.capitalize %></li>
+					<li class="mb-3"><i class="fas fa-pound-sign mr-3 text-dark"></i><%= @art.price %>.00</li>
+					<li class="mb-3"><i class="fas fa-truck-pickup mr-3 text-dark"></i>39.4 W x 59.1 H x 0.8 in</li>
 					<li class="mb-3"><%= @art.style %></li>
+					<li class="mb-3">Rate |<i class="text-dark mr-1"></i>£20<%= @art.rate %>per day</li>
 					<li class="mb-3">Ready to hang | Yes</li>
 					<li class="mb-3">Type | Original</li>
 					<li class="mb-3">Frame | No</li>
 					<li class="mb-3">Signed | Yes, On the back</li>	
 					<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>	
 				</div>
-				<div class="">
-			      <div class="shadow ml-3" style="width: 350px;">
+				<div class="p-3">
+			      <div class="shadow" style="width: 300px;">
 			      <%= render 'bookings/booking_form' %>
 			      </div>
 			    </div>

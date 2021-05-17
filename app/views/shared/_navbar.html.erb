@@ -1,60 +1,59 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom ">
-    <div class="text-secondary">
-        <%= link_to root_path do  %>
-          <%= image_tag 'logo.png', class: "logo ml-1" %>
-        <% end %>
-    </div>
-
-    <div>
-      <ul class="navbar-nav ml-5">
-        <% if user_signed_in? %>
-        <li class="nav-item">
-          <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#about-section" class= "nav-link mr-1">About</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Explore', arts_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-           <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-
-
-
-    <div class="collapse navbar-collapse mr-3" id="navbarSupportedContent">
-       <form class="form-inline my-2 my-lg-0">
-        <% if @query.present? %>
-        <input name="query" class="form-control mr-sm-2" type="search" placeholder="<%= @query %>" aria-label="Search">
-      <% else %>
-        <input name="query" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Search by artist or title...">
+  <div class="text-secondary">
+      <%= link_to root_path do  %>
+        <%= image_tag 'logo.png', class: "logo ml-1" %>
       <% end %>
-        <button class="btn my-2 my-sm-0" type="submit", style="background-color:#5bc0be">Search</button>
-      </form>
-      <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>       
-          <li class="nav-item dropdown active">
-            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-      <% else %>
-          <li class="nav-item">
-            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-            <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Register", new_user_registration_path, class: "dropdown-item" %>
-           </div>
-          </li>
-          <% end %>
-        </ul>
-      </div>
   </div>
+
+  <div>
+    <ul class="navbar-nav ml-5">
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about-section" class= "nav-link mr-1">About</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Explore', arts_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+         <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>       
+        <form class="form-inline my-lg-0 mr-3">
+          <% if @query.present? %>
+            <input name="query" class="form-control mr-sm-2" type="search" placeholder="<%= @query %>" aria-label="Search">
+          <% else %>
+            <input name="query" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Search by artist or title...">
+          <% end %>
+          <button class="btn my-2 my-sm-0 btn-outline-secondary" type="submit">Search</button>
+        </form>
+        <li class="nav-item dropdown active">
+          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to "View Bookings", bookings_path, class: "dropdown-item"  %>
+            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <!-- <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a> -->
+          <div class="d-flex p-3">
+          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light mr-3 text-dark border" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light text-dark border" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 
     

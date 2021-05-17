@@ -7,48 +7,63 @@
     </div>
 </div>
 
-<div class="container" style="margin-top: 112px">
-  <div class="d-flex justify-content-center full-page pt-2 rounded">
-    <div class="col-sm-6 p-4 mt-3" style="background-color: #f3f3f4">    
-    <h2 class="text-center">Sign up</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <div class="row">
-            <div class="col mt-3">
-               <%= f.input :first_name,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "first name", class: "border-radius-form" }%>
-            </div>
-            <div class="col mt-3">
-              <%= f.input :last_name,
-                          required: true,
-                          autofocus: true,
-                          input_html: { autocomplete: "last name", class: "border-radius-form" }%>
-            </div>
-            </div>
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" }%>
-          <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password" } %>
+<div style="background-color: #f4f3ee;">
+  <div class="container justify-content-center full-page rounded p-5" style="margin-top: 100px">
+    <div class="d-flex  justify-content-between">
+      <!-- <div class=""> -->
+        <div class="col-sm-6 mt-5 p-4">
+          <h1 class="" style="color: rgba(0, 0, 0, 0.5);">Sell or Rent Your Arts With Us</h1>
+          <h3 class="" style="color: rgba(0, 0, 0, 0.5);">Sign Up To Art Studio</h3>
+          <!-- <h5 class="text-dark">Submit Your Art For Review By Our Curators</h5> -->
+          <!-- <div class="d-flex mt-5"> -->
+          <!-- < %= image_tag 'login4.jpeg', width:220, height:220 %> -->
+          <!-- < %= image_tag 'login1.jpeg', width:220, height:220 %> -->
         </div>
+      <!-- </div> -->
+    <!-- <div class=""> -->
+      <div class="shadow rounded col-sm-6" data-aos="flip-left" style="background-color: #fff; height: 570px; width: 500px;"> 
+        <div class=" p-3 mt-4">
+          <!-- <h2 class="text-center">Sign up</h2> -->
 
-        <div class="form-actions mt-4">
-          <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
-          <%= link_to 'Cancel', root_path, class: "btn btn-info" %>
-        </div>
-      <% end %>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
 
+            <div class="form-inputs">
+              <div class="row">
+                  <div class="col mt-3">
+                     <%= f.input :first_name,
+                                  required: true,
+                                  autofocus: true,
+                                  input_html: { autocomplete: "first name", class: "border-radius-form" }%>
+                  </div>
+                  <div class="col mt-3">
+                    <%= f.input :last_name,
+                                required: true,
+                                autofocus: true,
+                                input_html: { autocomplete: "last name", class: "border-radius-form" }%>
+                  </div>
+              </div>
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" }%>
+                  <%= f.input :password,
+                              required: true,
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :password_confirmation,
+                              required: true,
+                              input_html: { autocomplete: "new-password" } %>
+            </div>
+
+            <div class="form-actions mt-4">
+              <%= f.button :submit, "Sign up", class: "btn btn-outline-success" %>
+              <%= link_to 'Cancel', root_path, class: "btn btn-outline-dark border" %>
+            </div>
+         <% end %>   
+       </div>   
+      </div>
     </div>
   </div>
 </div>
