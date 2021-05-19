@@ -120,6 +120,9 @@ html {
 .card-image {
 	// height: 350px;
 	border-radius: 10px 10px 0 0;
+	object-fit: cover;
+	// background-position: center top;
+	// background-size: cover;
 }
 
 .card-body {

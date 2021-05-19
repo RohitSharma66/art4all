@@ -16,7 +16,8 @@
 			<% if @art.photo.attached? %>
 				<%= cl_image_tag @art.photo.key, width:470, height:650, crop: :fill, style:"border-radius:20px;" %>
 			<% end %>
-			<div class="text-center p-5">			
+			<div class="text-center p-5">
+				<%= link_to 'Edit', edit_art_path(@art.id), class: "btn btn-warning text-white rounded" %>		
 				<%= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				
 			</div>		
 		</div>
