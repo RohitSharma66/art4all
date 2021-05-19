@@ -18,14 +18,19 @@
 			<div class="col-sm-4 card-boxes mt-4">	
 				<%= link_to art_path(art), class:"text-decoration-none" do %>
 					<div class="card" style="width: 22rem;">
-					<% if art.photo.attached? %>
-					<%= cl_image_tag art.photo.key, height: 380, crop: :fill, class: "card-image" %>
+						<% if art.photo.attached? %>
+						<%= cl_image_tag art.photo.key, width: 350, height: 280, crop: :fill, class: "card-image" %>
 						<% end %>
 					   	 <div class="card-body">
 						    <h5><i class="text-dark">"<%= art.name %>"</i></h5>	
-							<h6 class="text-dark">Author : <%= art.artist %></h6> 
-							<p class="card-text">£<%= art.price %></p> 
-							<p class="card-text">£<%= art.rate %>per day</p>
+							<h6 class="" style="color: rgba(0, 0, 0, 0.5);">Author : <%= art.artist %></h6> 
+							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Style : <%= art.style %></h6> 
+							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Cost : £<%= art.price %></h6> 
+							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Rent : £<%= art.rate %>per day</h6>
+					   	</div>
+					   	<div class="ml-3 mb-2 ">
+					   		<%= link_to 'Edit', edit_art_path(art.id), class: "btn btn-warning text-white rounded" %>
+					   		<%= link_to 'Delete', art_path(art.id), method: :delete,  data: { confirm: "Are you sure?" }, class: "btn btn-dark rounded" %>
 					   	</div>
 			 	  	</div>
 				<% end %>

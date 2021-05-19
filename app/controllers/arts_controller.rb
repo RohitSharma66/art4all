@@ -1,5 +1,6 @@
 class ArtsController < ApplicationController
 	  before_action :set_list, only: [:show, :edit, :update, :destroy]
+	  
 
 	def index
 		@arts = Art.all
@@ -19,7 +20,7 @@ class ArtsController < ApplicationController
 		@art = Art.new(art_params)
 		@art.user = current_user
 		if @art.save
-			redirect_to arts_path
+			redirect_to art_path(@art)
 		else
 			render 'new'
 		end
@@ -30,9 +31,11 @@ class ArtsController < ApplicationController
 	end
 
 	def update
-		@art = Art.update(art_params)
-		if @art.save
-			redirect_to art_path(@art)
+		# @art = Art.update(art_params)
+		if @art.update(art_params)
+			redirect_to arts_path
+		else
+			render 'edit'
 		end
 	end
 
@@ -44,7 +47,7 @@ class ArtsController < ApplicationController
 
 	private
 
-	 def set_list
+	def set_list
     	@art = Art.find(params[:id])
   	end
 
@@ -54,7 +57,8 @@ class ArtsController < ApplicationController
 			:artist,
 			:photo, 
 			:price,
-			:rate 
+			:rate, 
+			:style 
 			)
 	end
 end
