@@ -1,5 +1,6 @@
 class ArtsController < ApplicationController
-	  before_action :set_list, only: [:show, :edit, :update, :destroy]
+	skip_before_action :authenticate_user!, only: [:index, :show]
+	before_action :set_list, only: [:show, :edit, :update, :destroy]
 	  
 
 	def index

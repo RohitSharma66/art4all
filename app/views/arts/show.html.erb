@@ -12,9 +12,9 @@
 
 <div class="container full-page">
 	<div class="row mb-3">
-		<div class="mr-3 mt-5">
+		<div class="mr-4" style="margin-top: 50px;">
 			<% if @art.photo.attached? %>
-				<%= cl_image_tag @art.photo.key, width:470, height:650, crop: :fill, style:"border-radius:20px;" %>
+				<%= cl_image_tag @art.photo.key, width:420, height:470, crop: :fill, style:"border-radius:20px;" %>
 			<% end %>
 			<div class="text-center p-5">
 				<%= link_to 'Edit', edit_art_path(@art.id), class: "btn btn-warning text-white rounded" %>		
@@ -28,8 +28,8 @@
 					<li class="mb-3"><i class="fas fa-user mr-3 text-dark"></i><%= @art.artist.capitalize %></li>
 					<li class="mb-3"><i class="fas fa-pound-sign mr-3 text-dark"></i><%= @art.price %>.00</li>
 					<li class="mb-3"><i class="fas fa-truck-pickup mr-3 text-dark"></i>39.4 W x 59.1 H x 0.8 in</li>
-					<li class="mb-3">Style : <%= @art.style %></li>
-					<li class="mb-3 text-dark mr-1">Rate : £<%= @art.rate %> per day</li>
+					<li class="mb-3">Style : <%= @art.style.capitalize  %></li>
+					<li class="mb-3  mr-1">Rate : £<%= @art.rate %> per day</li>
 					<li class="mb-3">Ready to hang | Yes</li>
 					<li class="mb-3">Type | Original</li>
 					<li class="mb-3">Frame | No</li>
@@ -37,14 +37,16 @@
 					<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>	
 				</div>
 				<div class="p-3">
-			      <div class="shadow" style="width: 300px;">
-			      <%= render 'bookings/booking_form' %>
+			      <div style="width: 350px; margin-top: 50px;">
+			      	<%= render 'bookings/booking_form' %>
 			      </div>
 			    </div>
 			</div>		
+		</div>
+		<!-- <div>		 -->
 			<p style="line-height: 1.8; color: rgba(0, 0, 0, 0.5);">Description : Fine Arts degree alongside art masters Frank O’Cain and Ronnie Landfield at the Art Students League of New York. Iconic artists such as Georgia O'Keeffe, Jackson Pollock, Mark Rothko, among others, taught or studied here too. Growing up in New York City taught Susana a deep appreciation and love for different cultures. The eccentricity, pace and vibrancy of the concrete jungle shines through in glorious and galvanised works such as <i>The Night Is Ours, a dancing duet of acrylic and speckled, gestural and gyrating marks</i>. Continuous line motifs and organised chaos feature widely in Susana’s paintings; the artist is interested in the concept of synchronicity, destiny, and our willingness or unwillingness to keep going, “even when we don’t see where the road is taking us”.
 			</p>
-		</div>
+		<!-- </div> -->
 	</div>
 	<!-- < %= link_to 'Delete', art_path(@art), method: :delete, class:"btn btn-danger mt-2" %> -->
 <hr>

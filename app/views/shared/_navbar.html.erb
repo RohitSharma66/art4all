@@ -8,18 +8,28 @@
   <div>
     <ul class="navbar-nav ml-5">
       <% if user_signed_in? %>
-      <li class="nav-item">
-        <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#about-section" class= "nav-link mr-1">About</a>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Explore', arts_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-         <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
-      </li>
+          <li class="nav-item">
+            <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about-section" class= "nav-link mr-1">About</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Explore', arts_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+             <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about-section" class= "nav-link mr-1">About</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Explore', arts_path, class: 'nav-link' %>
+          </li>
       <% end %>
     </ul>
   </div>
@@ -46,8 +56,8 @@
         <li class="nav-item">
           <!-- <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a> -->
           <div class="d-flex p-3">
-          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light mr-3 text-dark border" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light text-dark border" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary mr-3 text-dark border" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-primary text-dark border" %>
           </div>
         </li>
       <% end %>
