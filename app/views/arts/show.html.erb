@@ -4,13 +4,19 @@
 	        <%= image_tag 'logo.png', class: "logo ml-2" %>		
 		<% end %>	
 	</div>
-    <div>
-    <% if user_signed_in? %>
-	     <%= link_to "Back", arts_path, class: "btn btn-info text-white mr-2"%>
-	   	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
-	   	 <% else %>
-	   	 <%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>
-	<% end %>
+    <div class="d-flex">
+	    <% if user_signed_in? %>
+		    	<%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>	
+		     <li class="nav-item dropdown active" style="list-style: none">
+	          	<%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+	          <div class="dropdown-menu dropdown-menu-right">
+	            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
+	            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+	          </div>
+	        </li>
+		   	 <% else %>
+		   	 	<%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>
+		<% end %>
 	</div>
 </div>
 

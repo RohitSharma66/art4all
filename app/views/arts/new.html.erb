@@ -6,13 +6,14 @@
 		<% end %>	
 	</div>
     <div class="d-flex">
-		<!-- < %= link_to "Back", arts_path, class: "btn btn-info mr-3" %>	
-					 -->
-		<!-- < %= link_to "Upload Art", new_art_path, class: "btn  btn-outline-secondary rounded mr-2" %> -->
-		<%= link_to "Back", root_path, class: "btn btn-outline-dark border mr-2" %>
-		<%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded signout-button text-white mr-4 nav-button" %>
+		<%= link_to "Back", root_path, class: "btn btn-outline-dark border mr-3" %>
+		<li class="nav-item dropdown active" style="list-style: none">
+          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+          </div>
+        </li>
 	</div>
-    <!-- </div> -->
 </div>
 
 <div style="background-color: #f4f3ee;">	
