@@ -1,13 +1,17 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom  d-flex justify-content-between">
-		<div>
-			<%= link_to root_path do  %>
-		        <%= image_tag 'logo.png', class: "logo ml-2" %>		
-			<% end %>	
-		</div>
-        <div>
-         <%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>
-       	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
-		</div>
+	<div>
+		<%= link_to root_path do  %>
+	        <%= image_tag 'logo.png', class: "logo ml-2" %>		
+		<% end %>	
+	</div>
+    <div>
+    <% if user_signed_in? %>
+	     <%= link_to "Back", arts_path, class: "btn btn-info text-white mr-2"%>
+	   	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
+	   	 <% else %>
+	   	 <%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>
+	<% end %>
+	</div>
 </div>
 
 <div class="container full-page">
@@ -16,10 +20,10 @@
 			<% if @art.photo.attached? %>
 				<%= cl_image_tag @art.photo.key, width:420, height:470, crop: :fill, style:"border-radius:20px;" %>
 			<% end %>
-			<div class="text-center p-5">
-				<%= link_to 'Edit', edit_art_path(@art.id), class: "btn btn-warning text-white rounded" %>		
-				<%= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				
-			</div>		
+			<!-- <div class="text-center p-5"> -->
+				<!-- < %= link_to 'Edit', edit_art_path(@art.id), class: "btn btn-warning text-white rounded" %>		 -->
+				<!-- < %= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				 -->
+			<!-- </div>		 -->
 		</div>
 		<div class="col">	
 			<p class="p-3"><h1><strong><i style="color: #e9afa3;">"<%= @art.name.capitalize %>"</i></strong></h1></p>	
@@ -34,7 +38,8 @@
 					<li class="mb-3">Type | Original</li>
 					<li class="mb-3">Frame | No</li>
 					<li class="mb-3">Signed | Yes, On the back</li>	
-					<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>	
+					<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>
+					<li class="mb=3">Owner : <strong><%= @art.owner.capitalize%></strong></li>	
 				</div>
 				<div class="p-3">
 			      <div style="width: 350px; margin-top: 50px;">

@@ -5,7 +5,7 @@
 			<% end %>	
 		</div>
         <div>
-         <%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>
+         <%= link_to "Back", bookings_path, class: "btn btn-info text-white mr-1"%>
        	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
 		</div>
 </div>
@@ -18,10 +18,10 @@
 			<% if @art.photo.attached? %>
 				<%= cl_image_tag @art.photo.key, width:420, height:470, crop: :fill, style:"border-radius:20px;" %>
 			<% end %>
-			<div class="text-center p-5">
-				<%= link_to 'Edit', edit_art_booking_path(@art, @booking), class: "btn btn-warning text-white rounded" %>		
+			<!-- <div class="text-center p-5"> -->
+				<!-- < %= link_to 'Edit', edit_art_booking_path(@art, @booking), class: "btn btn-warning text-white rounded" %>		 -->
 				<!-- < %= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				 -->
-			</div>		
+			<!-- </div>		 -->
 		</div>
 
 		<div class="col">

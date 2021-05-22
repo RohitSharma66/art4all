@@ -20,6 +20,9 @@
           <li class="nav-item">
              <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+             <%= link_to "All Bookings", bookings_path, class: "nav-link", style: "color: rgba(0, 0, 0, 0.5);" %>
+          </li>
         <% else %>
           <li class="nav-item">
             <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
@@ -48,7 +51,7 @@
         <li class="nav-item dropdown active">
           <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to "View Bookings", bookings_path, class: "dropdown-item"  %>
+            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
             <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
           </div>
         </li>
@@ -56,8 +59,8 @@
         <li class="nav-item">
           <!-- <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a> -->
           <div class="d-flex p-3">
-          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary mr-3 text-dark border" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-primary text-dark border" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-outline mr-2 text-dark border bg-light" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline text-dark border bg-light" %>
           </div>
         </li>
       <% end %>

@@ -1,0 +1,11 @@
+<% if owner_booking.approved %>
+  <%= simple_form_for [owner_booking.art, owner_booking] do |f| %>
+    <%= f.input :approved, :as => :hidden, :input_html => { value: false } %>
+    <%= f.submit 'Mark as pending', class: "btn btn-outline-dark w-100" %>
+  <% end %>
+<% else %>
+  <%= simple_form_for [owner_booking.art, owner_booking] do |f| %>
+    <%= f.input :approved, :as => :hidden, :input_html => { value: true } %>
+    <%= f.submit 'Approve', class: "btn w-100" %>
+  <% end %>
+<% end %>
