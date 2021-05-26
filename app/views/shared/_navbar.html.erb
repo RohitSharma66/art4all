@@ -5,8 +5,8 @@
       <% end %>
   </div>
 
-  <div>
-    <ul class="navbar-nav ml-5">
+  <div class="ml-5">
+    <ul class="navbar-nav">
       <% if user_signed_in? %>
           <li class="nav-item">
             <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
@@ -17,12 +17,7 @@
           <li class="nav-item">
             <%= link_to 'Explore', arts_path, class: 'nav-link' %>
           </li>
-          <li class="nav-item">
-             <%= link_to "Upload Art", new_art_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-             <%= link_to "All Bookings", bookings_path, class: "nav-link", style: "color: rgba(0, 0, 0, 0.5);" %>
-          </li>
+          
         <% else %>
           <li class="nav-item">
             <a href="#main" class="nav-link active mr-1" id="home-button">Home</a>
@@ -42,18 +37,22 @@
       <% if user_signed_in? %>       
         <form class="form-inline my-lg-0 mr-3">
           <% if @query.present? %>
-            <input name="query" class="form-control mr-sm-2" type="search" placeholder="<%= @query %>" aria-label="Search">
+            <input name="query" class="form-control mr-sm-2" value=" <%= params[:query] %>" type="search" placeholder= "Search" aria-label="Search">
           <% else %>
-            <input name="query" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Search by artist or title...">
+            <input name="query" class="form-control mr-sm-2"  type="search" aria-label="Search" placeholder="Search by artist or title...">
           <% end %>
           <button class="btn my-2 my-sm-0 btn-outline-secondary" type="submit">Search</button>
         </form>
+
         <li class="nav-item dropdown active">
           <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right">
             <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
+            <%= link_to "Upload Art", new_art_path, class: "dropdown-item" %>
+            <%= link_to "All Bookings", bookings_path, class: "dropdown-item" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
-          </div>
+          </div>   
         </li>
       <% else %>
         <li class="nav-item">

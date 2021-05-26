@@ -4,17 +4,20 @@
 		        <%= image_tag 'logo.png', class: "logo ml-2" %>		
 			<% end %>	
 		</div>
-        <div class="d-flex">
-		 <%= link_to "Home", root_path, class: " nav-link mr-2", id: "home-button" %>
-		 <%= link_to "Explore", arts_path, class: "nav-link", style: "color: rgba(0, 0, 0, 0.5);" %>
-		</div>
-		<li class="nav-item dropdown active" style="list-style: none">
-          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right">
-            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
-            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
-          </div>
-        </li>
+       <div class="d-flex">
+	       <li class="nav-item mr-3" style="list-style:none">
+	          <%= link_to "Home", root_path, class: "btn btn-outline-secondary" %>   	
+	       </li>  	
+			<li class="nav-item dropdown active" style="list-style: none">
+	          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+	          <div class="dropdown-menu dropdown-menu-right">
+	            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
+	            <%= link_to "Explore", arts_path, class: "dropdown-item" %>
+	            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+	            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+	          </div>
+	        </li>
+       </div>
        	 <!-- < %= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%> -->
 </div>
 

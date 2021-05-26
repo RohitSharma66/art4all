@@ -6,16 +6,21 @@
 	</div>
     <div class="d-flex">
 	    <% if user_signed_in? %>
-		    	<%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>	
-		     <li class="nav-item dropdown active" style="list-style: none">
-	          	<%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-	          <div class="dropdown-menu dropdown-menu-right">
-	            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
-	            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
-	          </div>
-	        </li>
-		   	 <% else %>
-		   	 	<%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>
+	    <li class="nav-item" style="list-style:none;">
+	    	<%= link_to "Back", arts_path, class: "btn btn-info text-white mr-3"%>	  	
+	    </li>
+	     <li class="nav-item dropdown active" style="list-style: none">
+	      	<%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+	      <div class="dropdown-menu dropdown-menu-right">
+	      	<%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+	      	<%= link_to "All Bookings", bookings_path, class: "dropdown-item" %>
+	        <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+	      </div>
+	    </li>
+	   	 <% else %>
+	   	<li>
+	   	 	<%= link_to "Back", arts_path, class: "nav-item text-white mr-3"%>   	 	
+	   	</li>
 		<% end %>
 	</div>
 </div>
@@ -26,10 +31,6 @@
 			<% if @art.photo.attached? %>
 				<%= cl_image_tag @art.photo.key, width:420, height:470, crop: :fill, style:"border-radius:20px;" %>
 			<% end %>
-			<!-- <div class="text-center p-5"> -->
-				<!-- < %= link_to 'Edit', edit_art_path(@art.id), class: "btn btn-warning text-white rounded" %>		 -->
-				<!-- < %= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				 -->
-			<!-- </div>		 -->
 		</div>
 		<div class="col">	
 			<p class="p-3"><h1><strong><i style="color: #e9afa3;">"<%= @art.name.capitalize %>"</i></strong></h1></p>	
@@ -45,7 +46,6 @@
 					<li class="mb-3">Frame | No</li>
 					<li class="mb-3">Signed | Yes, On the back</li>	
 					<li class="mb-3">Materials | Materials | Acrylic paint on canvasAcrylic paint on canvas</li>
-					<!-- <li class="mb=3">Owner : <strong>< %= @art.owner%></strong></li>	 -->
 				</div>
 				<div class="p-3">
 			      <div style="width: 350px; margin-top: 50px;">
@@ -54,12 +54,9 @@
 			    </div>
 			</div>		
 		</div>
-		<!-- <div>		 -->
 			<p style="line-height: 1.8; color: rgba(0, 0, 0, 0.5);">Description : Fine Arts degree alongside art masters Frank O’Cain and Ronnie Landfield at the Art Students League of New York. Iconic artists such as Georgia O'Keeffe, Jackson Pollock, Mark Rothko, among others, taught or studied here too. Growing up in New York City taught Susana a deep appreciation and love for different cultures. The eccentricity, pace and vibrancy of the concrete jungle shines through in glorious and galvanised works such as <i>The Night Is Ours, a dancing duet of acrylic and speckled, gestural and gyrating marks</i>. Continuous line motifs and organised chaos feature widely in Susana’s paintings; the artist is interested in the concept of synchronicity, destiny, and our willingness or unwillingness to keep going, “even when we don’t see where the road is taking us”.
 			</p>
-		<!-- </div> -->
 	</div>
-	<!-- < %= link_to 'Delete', art_path(@art), method: :delete, class:"btn btn-danger mt-2" %> -->
 <hr>
 	<div class="bg-light mt-3 quotes shadow">
         <blockquote class="blockquote text-right">

@@ -5,11 +5,10 @@
 	        <%= image_tag 'logo.png', class: "logo ml-1" %>		
 		<% end %>	
 	</div>
-    <!-- <div class=" mr-4"> -->
     	<% if user_signed_in? %>
 	    	<div class="d-flex" style="list-style: none">
 	    		<li class="nav-item">
-		    		<%= link_to "Home", root_path, class: " nav-link mr-1", id: "home-button" %>
+		    		<%= link_to "Home", root_path, class: " nav-link", id: "home-button" %>
 		    	</li>
 				<li class="nav-item">
              		<%= link_to "Upload Art", new_art_path, class: "nav-link", style: "color: rgba(0, 0, 0, 0.5);" %>
@@ -18,18 +17,17 @@
              		<%= link_to "All Bookings", bookings_path, class: "nav-link", style: "color: rgba(0, 0, 0, 0.5);" %>
           		</li>
 	    	</div>
-				<!-- < %= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-3"%> -->
+				
 				<li class="nav-item dropdown active" style="list-style: none">
 		          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 		          <div class="dropdown-menu dropdown-menu-right">
-		            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
+		          	<%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
 		            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
 		          </div>
 		        </li>
 		<% else %>
 				<%= link_to "Upload Art", new_art_path, class: "btn  btn-outline-secondary rounded mr-3" %>
 		<% end %>
-	<!-- </div> -->
 </div>
 
 
@@ -52,7 +50,7 @@
 							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);"> Owner : <%= art.owner %></h6>						
 					   	</div>
 			 	  	</div>
-						<%= link_to "edit", edit_art_path(art), class: "btn"  %>
+						<!-- < %= link_to "edit", edit_art_path(art), class: "btn"  %> -->
 				<% end %>
 		 	</div>
 		<% end %>
