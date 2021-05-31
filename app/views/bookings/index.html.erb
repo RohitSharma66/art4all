@@ -39,6 +39,7 @@
 				   	 	<h5><i class="text-dark">"<%= booking.art.name %>"</i></h5>
 		                <p>Start date:<%= booking.start_date.strftime("%d %B, %Y") %></p>
 		                <p>End date: <%= booking.end_date.strftime("%d %B, %Y") %></p>
+		                
 		                <p><%= booking.approved ? 'Owner has approved' : 'Pending approval' %></p>  		<div class="ml-3">
 		                <%= link_to 'Edit', edit_art_booking_path(booking.art, booking), class: "btn btn-success mr-1"  %>
 						<%= link_to 'Cancel Booking', booking_path(booking.id), method: :delete , data: { confirm: "Are you sure?" }, class: "btn btn-warning" %> 	

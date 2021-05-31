@@ -11,8 +11,7 @@ class BookingsController < ApplicationController
 	def show
 		@booking = Booking.find(params[:id])
 		@art = Art.find(params[:art_id])
-		@total_price = @art.rate * (@booking.end_date.mjd - @booking.start_date.mjd)
-		authorize @booking
+		# authorize @booking
 	end
 
 	def create
@@ -31,6 +30,7 @@ class BookingsController < ApplicationController
 	def edit
 		@booking = Booking.find(params[:id])
 		@art = Art.find(params[:art_id])
+		@total_price = @art.rate * (@booking.end_date.mjd - @booking.start_date.mjd)
 		authorize @booking
 	end
 
@@ -49,8 +49,8 @@ class BookingsController < ApplicationController
 	def destroy
 		@booking = Booking.find(params[:id])
 		@booking.destroy
-		redirect_to bookings_path
 		authorize @booking
+		redirect_to bookings_path
 	end
 
 	private
