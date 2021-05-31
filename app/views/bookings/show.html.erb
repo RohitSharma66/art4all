@@ -1,42 +1,44 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon border-bottom  d-flex justify-content-between">
-		<div>
-			<%= link_to root_path do  %>
-		        <%= image_tag 'logo.png', class: "logo ml-2" %>		
-			<% end %>	
-		</div>
-        <div>
-         <%= link_to "Back", bookings_path, class: "btn btn-info text-white mr-1"%>
-       	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
-		</div>
+	<div>
+		<%= link_to root_path do  %>
+	        <%= image_tag 'logo.png', class: "logo ml-2" %>		
+		<% end %>	
+	</div>
+    <div>
+     <%= link_to "Back", bookings_path, class: "btn btn-info text-white mr-1"%>
+   	 <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%>
+	</div>
 </div>
 
 <div class="container">
-	<h1 class="text-center p-4" style="color: #5bc0be;"> Welcome <%= current_user.first_name %>, Here are your Bookings</h1>
-	<div class="row">
-	<% if @booking.present? %>	
-		<div class=" mt-4 col">
-			<% if @art.photo.attached? %>
-				<%= cl_image_tag @art.photo.key, width:420, height:470, crop: :fill, style:"border-radius:20px;" %>
-			<% end %>
-			<!-- <div class="text-center p-5"> -->
-				<!-- < %= link_to 'Edit', edit_art_booking_path(@art, @booking), class: "btn btn-warning text-white rounded" %>		 -->
-				<!-- < %= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				 -->
-			<!-- </div>		 -->
-		</div>
-
-		<div class="col">
-			<p class="p-3"><h1><strong><i style="color: #e9afa3;">"<%= @art.name.capitalize %>"</i></strong></h1></p>
-			<!-- <div> -->
-			<div class="un-list p-3" style="color: rgba(0, 0, 0, 0.5);">
-				<li class="mb-3"><i class="fas fa-user mr-3 text-dark"></i><%= @art.artist.capitalize %></li>
-				<li class="mb-3"><i class="fas fa-pound-sign mr-3 text-dark"></i><%= @art.price %>.00</li>
-				<li class="mb-3  mr-1">Rate : £<%= @art.rate %> per day</li>
+	<h1 class="text-center p-4" style="color: #5bc0be;"> Welcome <%= current_user.first_name.capitalize %>, Here are your Bookings</h1>
+	<div class="row d-flex justify-content-center ml-5">
+		<% if @booking.present? %>	
+			<div class="col ml-5">
+				<% if @art.photo.attached? %>
+					<%= cl_image_tag @art.photo.key, width:350, height:420, crop: :fill, style:"border-radius:20px;" %>
+				<% end %>
 			</div>
-			<!-- </div> -->
-		</div>
-		<% else %>
-		<h1>Sorry, you donot have any Bookings Yet.</h1>
-	<% end %>
+				<!-- <div class="text-center p-5"> -->
+					<!-- < %= link_to 'Edit', edit_art_booking_path(@art, @booking), class: "btn btn-warning text-white rounded" %>		 -->
+					<!-- < %= link_to "Purchase", arts_path, class: "btn btn-dark text-white" %>				 -->
+				<!-- </div>		 -->
+
+			<div class="col">
+				<p class=""><h1><strong><i style="color: #e9afa3;">"<%= @art.name.capitalize %>"</i></strong></h1></p>
+				<!-- <div> -->
+				<div class="un-list" style="color: rgba(0, 0, 0, 0.5);">
+					<li class="mb-3"><i class="fas fa-user mr-3 text-dark"></i><%= @art.artist.capitalize %></li>
+					<li class="mb-3">Cost : <%= @art.price %>.00</li>
+					<li class="mb-3  mr-1">Rate : £<%= @art.rate %> per day</li>
+					<li class="mb-3  mr-1">Total Price : £<%= @total_price %></li>
+				</div>
+				<!-- </div> -->
+				<%= link_to 'Cancel Booking', booking_path(@booking.id), method: :delete , data: { confirm: "Are you sure?" }, class: "btn btn-warning" %> 	
+			</div>
+			<% else %>
+			<h1>Sorry, you donot have any Bookings Yet.</h1>
+		<% end %>
 	</div>
 </div>
 

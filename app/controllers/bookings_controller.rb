@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
 	def show
 		@booking = Booking.find(params[:id])
 		@art = Art.find(params[:art_id])
-		# authorize @booking
+		@total_price = @art.rate * (@booking.end_date.mjd - @booking.start_date.mjd)
+		authorize @booking
 	end
 
 	def create
