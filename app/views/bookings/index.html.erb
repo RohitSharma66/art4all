@@ -12,16 +12,21 @@
 	          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 	          <div class="dropdown-menu dropdown-menu-right">
 	            <!-- < %= link_to "View Bookings", bookings_path, class: "dropdown-item"  %> -->
-	            <%= link_to "Explore", arts_path, class: "dropdown-item" %>
-	            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-	            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+	            <% if user_signed_in? %>
+		            <h6 class="ml-4" style="color: #5bc0be"><i> Hello <%= current_user.first_name %></i></h6>
+		            <% end %>
+	            <%= link_to "Explore", arts_path, class: "dropdown-item links" %>
+	            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item links" %>
+	            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item links"  %>
 	          </div>
 	        </li>
        </div>
        	 <!-- < %= link_to "SignOut", destroy_user_session_path, method: :delete, class: "btn rounded text-white signout-button mr-4"%> -->
 </div>
 
+
 <div class=" full-page d-flex justify-content-center p-4 ml-4" style="margin-top: 100px;">	
+<% if @bookings.present? %>
 
 	<div class="col-sm-6">
 		<h3 class="text-center mb-4" style= "color: rgba(0, 0, 0, 0.5);">View All of Your Bookings</h3>	
@@ -67,8 +72,9 @@
 			<% end %>
 		</div>
 	</div>
-
-
+	<% else %>
+	<h1 class="mt-4"><i><%= "Sorry, You Donot have any bookings ..." %></i></h1>
+	<% end %>
 </div>
 
 			     

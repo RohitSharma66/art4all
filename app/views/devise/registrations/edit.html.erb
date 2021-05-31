@@ -12,8 +12,8 @@
     <li class="nav-item dropdown active" style="list-style: none">
           <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to "Home", root_path, class: "dropdown-item" %>
-            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+            <%= link_to "Home", root_path, class: "dropdown-item links" %>
+            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item links"  %>
           </div>
         </li>
   </div>
@@ -31,6 +31,8 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.input :first_name, required: true, autofocus: true %>
+      <%= f.input :last_name, required: true, autofocus: true %>
       <%= f.input :email, required: true, autofocus: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

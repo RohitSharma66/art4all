@@ -4,21 +4,24 @@ class ArtsController < ApplicationController
 	  
 
 	def index
-		@arts = Art.all
-	end
+    	@arts = policy_scope(Art).order(created_at: :desc)
+  	end
 
 	def show
+		authorize @art
 		# @art = Art.find(params[:id])
 		@booking = Booking.new
 	end
 
 	def new
 		@art = Art.new
+		authorize @art
 	end
 
 
 	def create
 		@art = Art.new(art_params)
+		authorize @art
 		@art.user = current_user
 		if @art.save
 			redirect_to art_path(@art)
@@ -28,11 +31,13 @@ class ArtsController < ApplicationController
 	end
 
 	def edit
+		authorize @art
 		# @art = Art.find(params[:id])
 	end
 
 	def update
 		# @art = Art.update(art_params)
+		authorize @art
 		if @art.update(art_params)
 			redirect_to arts_path
 		else
@@ -41,6 +46,7 @@ class ArtsController < ApplicationController
 	end
 
 	def destroy
+		authorize @art
 		@art.destroy
 		redirect_to arts_path
 	end
