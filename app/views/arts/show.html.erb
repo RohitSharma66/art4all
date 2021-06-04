@@ -60,14 +60,24 @@
 			<p style="line-height: 1.8; color: rgba(0, 0, 0, 0.5);">Description : Fine Arts degree alongside art masters Frank O’Cain and Ronnie Landfield at the Art Students League of New York. Iconic artists such as Georgia O'Keeffe, Jackson Pollock, Mark Rothko, among others, taught or studied here too. Growing up in New York City taught Susana a deep appreciation and love for different cultures. The eccentricity, pace and vibrancy of the concrete jungle shines through in glorious and galvanised works such as <i>The Night Is Ours, a dancing duet of acrylic and speckled, gestural and gyrating marks</i>. Continuous line motifs and organised chaos feature widely in Susana’s paintings; the artist is interested in the concept of synchronicity, destiny, and our willingness or unwillingness to keep going, “even when we don’t see where the road is taking us”.
 			</p>
 	</div>
-<hr>
 	<div class="bg-light mt-3 quotes shadow">
         <blockquote class="blockquote text-right">
         <p class="blockquote-paragraph mb-0 mr-3">"Inspiration exists, but it has to find you working."</p>
         <footer class="blockquote-footer mr-3"><cite title="Source Title">Pablo Picasso</cite></footer>
         </blockquote>
     </div>
+<hr>
+
+	<% if @art.address.present? %>
+		<div class="mt-4" id="map"
+		     style="width: 100%; height: 400px; border-radius: 20px;"
+		     data-markers="<%= @markers.to_json %>"
+		     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+		     	
+	    </div>
+	<% end %>
 </div>
+
 
 
 
