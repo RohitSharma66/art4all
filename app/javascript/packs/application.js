@@ -24,6 +24,7 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 
 // Internal imports, e.g:
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   AOS.init();
   initMapbox();
+  initAutocomplete();
 });

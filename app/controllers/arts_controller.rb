@@ -11,11 +11,13 @@ class ArtsController < ApplicationController
 	def show
 		# @art = Art.find(params[:id])
 		# @arts = Art.all
+		@arts = Art.geocoded
 		@arts = Art.where.not(latitude: nil, longitude: nil)
 		@markers = @arts.geocoded.map do |art|
 	      {
 	        lat: art.latitude,
-	        lng: art.longitude
+	        lng: art.longitude,
+	        info_window: render_to_string(partial: "info_window", locals: { art: art })
 	      }
 	    end
 		@booking = Booking.new
