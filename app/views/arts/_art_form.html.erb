@@ -6,6 +6,7 @@
 		<%= f.input :price, placeholder: "Price", label: false %>
 		<%= f.input :rate, placeholder: "Daily rate", label: false, prepend: '£' %>
 		<%= f.input :owner, placeholder: "Owner of this Art", label: false %>
+		<%= f.input :address, placeholder: "Address of this Art", label: false %>
 		<%= f.input :style, placeholder: "Style", collection: Art::STYLES %>
 		<%= f.input :photo, as: :file, label: false %>
 		<%= f.submit "Submit", class:"btn btn-outline-success"%>
