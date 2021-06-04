@@ -5,7 +5,7 @@ class ArtsController < ApplicationController
 
 	def index
 		@arts = policy_scope(Art).order(created_at: :desc)
-		# @arts = Art.all
+		@arts = Art.all
 		@arts = Art.where.not(latitude: nil, longitude: nil)
 		@markers = @arts.geocoded.map do |art|
 	      {
