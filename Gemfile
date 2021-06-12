@@ -23,6 +23,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'pundit'
 gem 'geocoder'
+gem 'pg_search'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

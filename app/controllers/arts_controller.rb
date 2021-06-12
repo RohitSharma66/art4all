@@ -4,8 +4,12 @@ class ArtsController < ApplicationController
 	  
 
 	def index
-		@arts = policy_scope(Art).order(created_at: :desc)
-		
+			@arts = policy_scope(Art).order(created_at: :desc)
+		if params[:query].present?
+			@arts = Art.search_by_name_and_artist(params[:query])
+		else
+			@arts = Art.all
+		end	
   	end
 
 	def show
