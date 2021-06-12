@@ -37,16 +37,13 @@
 
 
 <div class="container full-page" style="margin-top: 120px;">
-	<% if Art.search_by_name_and_artist(params[:query]).present?  %>		
-	<h3 class="text-center p-3" style="color: #5bc0be">View All of Our Arts</h3>
+	<% if Art.search_by_name_and_artist(params[:query]).present? %>
+		<h3 class="text-center p-3" style="color: #5bc0be">Here are the results</h3>
+	<% elsif params[:query].blank? %>
+		<h3 class="text-center p-3" style="color: #5bc0be">View All Our Arts</h3>
 	<% else %>
-	<h3 class="text-center p-3" style="color: #5bc0be">Sorry, No results found</h3>
+		<h3 class="text-center p-3" style="color: #5bc0be">Sorry, No results found</h3>
 	<% end %>
-
-
-	<!-- <div>
-		
-	</div> -->
 
 	<div class="row">
 		<% @arts.each do |art| %>
