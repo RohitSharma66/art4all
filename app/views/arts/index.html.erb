@@ -54,9 +54,9 @@
 						<%= cl_image_tag art.photo.key, width: 335, height: 280, class: "card-image" %>
 						<% end %>
 					   	 <div class="card-body">
-						    <h5><i class="text-dark">"<%= art.name %>"</i></h5>	
+						    <h6><i class="text-dark">"<%= art.name %>"</i></h6>	
 							<h6 class="" style="color: rgba(0, 0, 0, 0.5);">Author : <%= art.artist %></h6> 
-							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Style : <%= art.style %></h6> 
+							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Style : <%= art.style.capitalize %></h6> 
 							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Cost : £<%= art.price %></h6> 
 							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);">Rent : £<%= art.rate %> per day</h6>
 							<h6 class="card-text" style="color: rgba(0, 0, 0, 0.5);"> Owner : <%= art.owner %></h6>	
