@@ -36,7 +36,7 @@
 				<div class="card mr-2" style="width: 18rem;">
 					<%= cl_image_tag booking.art.photo.key, height: 220, class: "card-image" %>
 				   	<div class="card-body">
-				   	 	<h5><i class="text-dark">"<%= booking.art.name %>"</i></h5>
+				   	 	<h6><i class="text-dark">"<%= booking.art.name %>"</i></h6>
 		                <p>Start date:<%= booking.start_date.strftime("%d %B, %Y") %></p>
 		                <p>End date: <%= booking.end_date.strftime("%d %B, %Y") %></p>
 		                
