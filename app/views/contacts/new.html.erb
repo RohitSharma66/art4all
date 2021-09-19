@@ -1,0 +1,46 @@
+<%= render 'shared/navbarless'  %>
+<hr>
+<h1 class="d-flex justify-content-center p-1" data-aos="flip-left" style="color: rgba(0, 0, 0, 0.5)"><i>Say Hello!</i></h1>
+<hr>
+<div class="container mb-3 d-flex justify-content-between">
+  <div class="container">
+    <%= image_tag 'contactpic.jpeg', width: 500, height:500  %>
+  </div>
+
+  <div class="container">
+    <%= form_for @contact do |f| %>
+      <div class="shadow rounded" data-aos="flip-left">
+        <div class="col p-4">    
+          <%= f.label :name %></br>
+          <%= f.text_field  :name, required: true, class: "contact-form-text-area col", style:"color: rgba(0, 0, 0, 0.5)", placeholder: "Enter name"%></br>  
+          </br>
+        
+          <%= f.label :email %></br>
+          <%= f.text_field :email, required: true, class: "contact-form-text-area col", placeholder: "Enter email" %></br>
+        
+          </br>
+        
+          <%= f.label :message %></br>
+          <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area col", 
+              placeholder: "Send me a message"%>
+              
+          </br>
+          <div class= "d-none">
+            <%= f.label :nickname %></br>
+            <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+          </div>
+
+          <%= f.submit 'Send Message', class: 'btn btn-outline-success' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+

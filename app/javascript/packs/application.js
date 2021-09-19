@@ -31,6 +31,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 // import { initSelect2 } from '../components/init_select2';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+// import { initClearFields } from '../components/contacts.js'; 
 // import { changeBackground } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   AOS.init();
   initMapbox();
   initAutocomplete();
+  // initClearFields();
 });

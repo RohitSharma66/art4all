@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon d-flex justify-content-between">
+    <!-- <div class="text-secondary"> -->
+	<div>
+		<%= link_to root_path do  %>
+	        <%= image_tag 'logo.png', class: "logo ml-1" %>		
+		<% end %>	
+	</div>
+    <div class="d-flex">
+    	<li class="nav-item" style="list-style:none;">
+			<%= link_to "Back", root_path, class: "btn btn-outline-dark border mr-3" %>	
+    	</li>
+		<li class="nav-item dropdown active" style="list-style: none">
+          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right">
+          	<% if user_signed_in? %>
+	            <h6 class="ml-4" style="color: #5bc0be"><i> Hello <%= current_user.first_name %></i></h6>
+	            <% end %>
+            <%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "dropdown-item links"  %>
+          </div>
+        </li>
+	</div>
+</div>

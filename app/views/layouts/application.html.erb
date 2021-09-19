@@ -19,7 +19,24 @@
     <div class="main" style="margin-top: 100px;">
       <%= yield %>   
     </div>
-    <p class="notice"><%= notice %></p>
+    <%# <p class="notice"><%= notice %>
     <%= render 'shared/footer' %>
+
+    <%# <script>
+    const initClearFields = () => {
+    const nameContact = document.querySelector('.nameContact');
+    const textContact = document.querySelector('.textContact');
+    const emailContact = document.querySelector('.emailContact');
+    const contactButton = document.querySelector('.contactButton');
+    if(contactButton) {
+        contactButton.addEventListener('click', (e) => {
+            e.nameContact.value = "";
+            e.emailContact.value = "";
+            e.textContact.value = "";
+        })
+      };
+    };
+    </script> %>
+  
   </body>
 </html>
