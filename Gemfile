@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ gem 'ruby'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails'
@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5'
 # gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'faker'
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'pundit'
 gem 'geocoder'
